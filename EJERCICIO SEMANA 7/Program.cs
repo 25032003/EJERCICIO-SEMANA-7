@@ -105,16 +105,17 @@ void catcher()
 }
 void ejemploArreglo()
 {
-    int[] numero = new int[5]; //Definimos y creamos el arreglo
-                               //int suma = 0;
+    int[] numero = new int[7]; //Definimos y creamos el arreglo
+    int suma = 0;
+    int elementos = numero.Length;
+    numero[0] = 45;
+    numero[1] = 50;
+    numero[2] = 68;
+    numero[3] = 70;
+    numero[4] = 86;
+    numero[5] = 92;
+    numero[6] = 69;
 
-    //numero[0] = 45;
-    //numero[1] = 50;
-    //numero[2] = 68;
-    //numero[3] = 70;
-    //numero[4] = 86;
-    //numero[5] = 92;
-    //numero[6] = 69;
 
     int segunda = 0;
     int personas = 10;
@@ -133,18 +134,22 @@ void ejemploArreglo()
 
     Random ran = new Random();
     rifa = ran.Next(personas);
+    segunda = ran.Next(personas);
 
     Console.WriteLine("\n La primera persona Ganadora es:" + nombres[rifa]);
-    Console.WriteLine("\n La segunda persona Ganadora es:" + personas);
+    Console.WriteLine("\n La segunda persona Ganadora es:" + nombres[segunda]);
 
-    for (int i = 0; i < personas; i++)
+    for (int i = 0; i < elementos; i++)
     {
 
-        //suma = suma + numero[i];
-        //Console.WriteLine("Numeros en pos 2=" + numero[i]);
+        suma = suma + numero[i];
+        Console.WriteLine("Numeros en pos 2=" + numero[i]);
     }
-    //Console.WriteLine("Sumatoria = " + suma);
-    //Console.WriteLine("El promedio es = " + suma / elementos);
+    Console.WriteLine("Sumatoria = " + suma);
+    Console.WriteLine("El promedio es = " + suma / elementos);
+
+    Console.WriteLine("El numero mayor es:" + numero.Max());
+    Console.WriteLine("El numero menor es:" + numero.Min());
 
 }
 ejemploArreglo();
